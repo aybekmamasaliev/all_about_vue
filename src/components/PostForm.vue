@@ -26,7 +26,7 @@ export default {
                 body:""
             }
         }
-    }
+    } 
 }
 </script>
 <style scoped>

@@ -1,7 +1,9 @@
 <template>
     <div v-if="(posts.length>0)">
         <h4>Users list</h4>
-        <post-item  v-for="post in posts" :post="post" :key="post.id" @remove="$emit('remove', post)"/>
+        <transition-group name="user-list">
+            <post-item  v-for="post in posts" :post="post" :key="post.id" @remove="$emit('remove', post)"/>
+        </transition-group>
     </div>
     <div v-else>
         <h1 class="red">No posts</h1>
@@ -25,5 +27,21 @@ export default {
 <style scoped>
     .red{
         color:red
+    }
+    .user-list-item{
+        display: inline-block;
+        margin-right: 10px;
+    }
+    .user-list-enter-active,
+    .user-list-leave-active{
+        transition: all 0.3s ease;
+    }
+    .user-list-enter-from,
+    .user-list-leave-to{
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    .user-list-move{
+        transition: transform 0.4s ease
     }
 </style>
