@@ -2,6 +2,7 @@ import Main from "@/pages/Main.vue"
 import UserPage from "@/pages/UserPage.vue"
 import About from "@/pages/About.vue"
 import CurrentPost from "@/pages/CurrentPost.vue"
+import PostPageWithStore from "@/pages/PostPageWithStore"
 import { createRouter, createWebHashHistory } from "vue-router"
 const routes=[
     {
@@ -19,6 +20,10 @@ const routes=[
     {
         path:"/posts/:id",
         component:CurrentPost
+    },
+    {
+        path:"/store",
+        component:PostPageWithStore
     }
 ]
 
